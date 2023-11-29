@@ -1,0 +1,101 @@
+(base) ian@ian-Latitude-E7440:~$ java sevdim5.java > sevdim5.txt
+(base) ian@ian-Latitude-E7440:~$ head sevdim5.txt
+array7D[0][0][0][0][0][0][0] = 0
+array7D[0][0][0][0][0][0][1] = 1
+array7D[0][0][0][0][0][0][2] = 2
+array7D[0][0][0][0][0][0][3] = 3
+array7D[0][0][0][0][0][0][4] = 4
+array7D[0][0][0][0][0][0][5] = 5
+array7D[0][0][0][0][0][0][6] = 6
+array7D[0][0][0][0][0][1][0] = 7
+array7D[0][0][0][0][0][1][1] = 8
+array7D[0][0][0][0][0][1][2] = 9
+(base) ian@ian-Latitude-E7440:~$ tail sevdim5.txt
+array7D[6][6][6][6][6][5][4] = 823533
+array7D[6][6][6][6][6][5][5] = 823534
+array7D[6][6][6][6][6][5][6] = 823535
+array7D[6][6][6][6][6][6][0] = 823536
+array7D[6][6][6][6][6][6][1] = 823537
+array7D[6][6][6][6][6][6][2] = 823538
+array7D[6][6][6][6][6][6][3] = 823539
+array7D[6][6][6][6][6][6][4] = 823540
+array7D[6][6][6][6][6][6][5] = 823541
+array7D[6][6][6][6][6][6][6] = 823542
+(base) ian@ian-Latitude-E7440:~$ 
+(base) ian@ian-Latitude-E7440:~$ cat sevdim5.java
+public class SevenDimensionArray {
+    public static void main(String[] args) {
+        // Declare a 7-dimensional array
+        int[][][][][][][] array7D = new int[7][7][7][7][7][7][7];
+
+        // Initialize the array with values (here, simply using a counter)
+        int value = 0;
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 7; j++) {
+                for (int k = 0; k < 7; k++) {
+                    for (int l = 0; l < 7; l++) {
+                        for (int m = 0; m < 7; m++) {
+                            for (int n = 0; n < 7; n++) {
+                                for (int o = 0; o < 7; o++) {
+                                    array7D[i][j][k][l][m][n][o] = value++;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // Process and print the values of the array
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 7; j++) {
+                for (int k = 0; k < 7; k++) {
+                    for (int l = 0; l < 7; l++) {
+                        for (int m = 0; m < 7; m++) {
+                            for (int n = 0; n < 7; n++) {
+                                for (int o = 0; o < 7; o++) {
+                                    System.out.println("array7D[" + i + "][" + j + "][" + k + "][" + l + "][" + m + "][" + n + "][" + o + "] = " + array7D[i][j][k][l][m][n][o]);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+(base) ian@ian-Latitude-E7440:~$ 
+(base) ian@ian-Latitude-E7440:~$ sloccount sevdim5.java
+Have a non-directory at the top, so creating directory top_dir
+Adding /home/ian/sevdim5.java to top_dir
+Categorizing files.
+Finding a working MD5 command....
+Found a working MD5 command.
+Computing results.
+
+
+SLOC	Directory	SLOC-by-Language (Sorted)
+36      top_dir         java=36
+
+
+Totals grouped by language (dominant language first):
+java:            36 (100.00%)
+
+
+
+
+Total Physical Source Lines of Code (SLOC)                = 36
+Development Effort Estimate, Person-Years (Person-Months) = 0.01 (0.07)
+ (Basic COCOMO model, Person-Months = 2.4 * (KSLOC**1.05))
+Schedule Estimate, Years (Months)                         = 0.08 (0.93)
+ (Basic COCOMO model, Months = 2.5 * (person-months**0.38))
+Estimated Average Number of Developers (Effort/Schedule)  = 0.08
+Total Estimated Cost to Develop                           = $ 824
+ (average salary = $56,286/year, overhead = 2.40).
+SLOCCount, Copyright (C) 2001-2004 David A. Wheeler
+SLOCCount is Open Source Software/Free Software, licensed under the GNU GPL.
+SLOCCount comes with ABSOLUTELY NO WARRANTY, and you are welcome to
+redistribute it under certain conditions as specified by the GNU GPL license;
+see the documentation for details.
+Please credit this data as "generated using David A. Wheeler's 'SLOCCount'."
+(base) ian@ian-Latitude-E7440:~$
